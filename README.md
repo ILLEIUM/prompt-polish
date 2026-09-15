@@ -1,8 +1,8 @@
-# Prompt Polish · 提示词润色
+# Prompt Polish · 提示词润色 (Hermes only)
 
 > **AI-assisted project.** This plugin was designed, implemented, and debugged with substantial assistance from an AI coding agent.
 >
-> **本项目由 AI 辅助完成。** 插件的设计、实现与调试大量借助 AI 编程代理完成。
+> **本项目由 AI 辅助完成。** 
 
 按 **Tab** 键，把聊天输入框里的草稿就地润色成一份高质量、可直接执行的任务提示词。
 
