@@ -319,54 +319,77 @@ function PolishChip() {
 }
 
 // ── locale bundles ───────────────────────────────────────────────────────
+// NOTE: the SDK resolves keys by dot-path *into a nested tree*
+// (`resolvePath('chip.notify')` → STRINGS[locale].chip.notify). Flat quoted
+// keys do NOT work — they fall through to the raw key string.
 const STRINGS = {
   en: {
-    'notify.empty': 'Write a draft first, then press Tab to polish it.',
-    'error.unknown': 'Unknown error',
-    'error.unreachable': 'Polishing service unreachable',
-    'error.hint': 'Tab to retry · Esc to dismiss',
-    'loading.text': 'Polishing prompt…',
-    'strip.sourceImprove': 'Prompt polish',
-    'strip.sourcePreview': 'Community prompt · full text',
-    'strip.hintRepolish': 're-polish',
-    'strip.hintDismiss': 'dismiss',
-    'strip.btnAgain': 'Again',
-    'strip.btnApply': 'Apply to draft',
-    'search.fetchFail': 'Failed to fetch full text',
-    'search.fallback': 'Local polishing unavailable — showing community search results.',
-    'search.none': 'No similar prompts found in the community.',
-    'search.hint': 'Click a result to adopt it',
-    'search.btnClose': 'Close',
-    'chip.title': 'Prompt Polish loaded — press Tab in the composer to polish the draft',
-    'chip.notify': 'Prompt Polish loaded: write a draft in the composer, then press Tab to polish (Ctrl+Shift+P as backup).',
-    'palette.label': 'Polish composer draft',
-    'palette.detailReady': 'Polish the current draft',
-    'palette.detailEmpty': 'Composer is empty',
-    'keybind.label': 'Polish composer draft (prompt-polish)'
+    notify: { empty: 'Write a draft first, then press Tab to polish it.' },
+    error: {
+      unknown: 'Unknown error',
+      unreachable: 'Polishing service unreachable',
+      hint: 'Tab to retry · Esc to dismiss'
+    },
+    loading: { text: 'Polishing prompt…' },
+    strip: {
+      sourceImprove: 'Prompt polish',
+      sourcePreview: 'Community prompt · full text',
+      hintRepolish: 're-polish',
+      hintDismiss: 'dismiss',
+      btnAgain: 'Again',
+      btnApply: 'Apply to draft'
+    },
+    search: {
+      fetchFail: 'Failed to fetch full text',
+      fallback: 'Local polishing unavailable — showing community search results.',
+      none: 'No similar prompts found in the community.',
+      hint: 'Click a result to adopt it',
+      btnClose: 'Close'
+    },
+    chip: {
+      title: 'Prompt Polish loaded — press Tab in the composer to polish the draft',
+      notify: 'Prompt Polish loaded: write a draft in the composer, then press Tab to polish (Ctrl+Shift+P as backup).'
+    },
+    palette: {
+      label: 'Polish composer draft',
+      detailReady: 'Polish the current draft',
+      detailEmpty: 'Composer is empty'
+    },
+    keybind: { label: 'Polish composer draft (prompt-polish)' }
   },
   zh: {
-    'notify.empty': '先写点内容，再按 Tab 润色。',
-    'error.unknown': '未知错误',
-    'error.unreachable': '润色服务不可达',
-    'error.hint': 'Tab 重试 · Esc 关闭',
-    'loading.text': '正在润色提示词…',
-    'strip.sourceImprove': '提示词润色',
-    'strip.sourcePreview': '社区提示词 · 全文',
-    'strip.hintRepolish': '再润色',
-    'strip.hintDismiss': '关闭',
-    'strip.btnAgain': '再来一次',
-    'strip.btnApply': '应用到草稿',
-    'search.fetchFail': '取全文失败',
-    'search.fallback': '本地润色暂不可用，转社区检索结果。',
-    'search.none': '社区里没有相近的提示词。',
-    'search.hint': '点击采用社区提示词',
-    'search.btnClose': '关闭',
-    'chip.title': 'Prompt Polish 已加载 — 焦点在输入框按 Tab 润色草稿',
-    'chip.notify': 'Prompt Polish 已加载：在输入框写好草稿后按 Tab 润色（Ctrl+Shift+P 备用）。',
-    'palette.label': '润色输入框草稿',
-    'palette.detailReady': '润色当前草稿',
-    'palette.detailEmpty': '输入框为空',
-    'keybind.label': '润色输入框草稿（prompt-polish）'
+    notify: { empty: '先写点内容，再按 Tab 润色。' },
+    error: {
+      unknown: '未知错误',
+      unreachable: '润色服务不可达',
+      hint: 'Tab 重试 · Esc 关闭'
+    },
+    loading: { text: '正在润色提示词…' },
+    strip: {
+      sourceImprove: '提示词润色',
+      sourcePreview: '社区提示词 · 全文',
+      hintRepolish: '再润色',
+      hintDismiss: '关闭',
+      btnAgain: '再来一次',
+      btnApply: '应用到草稿'
+    },
+    search: {
+      fetchFail: '取全文失败',
+      fallback: '本地润色暂不可用，转社区检索结果。',
+      none: '社区里没有相近的提示词。',
+      hint: '点击采用社区提示词',
+      btnClose: '关闭'
+    },
+    chip: {
+      title: 'Prompt Polish 已加载 — 焦点在输入框按 Tab 润色草稿',
+      notify: 'Prompt Polish 已加载：在输入框写好草稿后按 Tab 润色（Ctrl+Shift+P 备用）。'
+    },
+    palette: {
+      label: '润色输入框草稿',
+      detailReady: '润色当前草稿',
+      detailEmpty: '输入框为空'
+    },
+    keybind: { label: '润色输入框草稿（prompt-polish）' }
   }
 }
 
