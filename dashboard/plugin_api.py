@@ -28,12 +28,13 @@ router = APIRouter()
 MCP_URL = "https://prompts.chat/api/mcp"
 AUX_TASK = "prompt_polish"
 
-_POLISH_SYSTEM = """You are a prompt-engineering expert. The user wrote a draft in the chat composer and asked to polish it.
-Rewrite the draft into a high-quality, directly executable task prompt:
-- Preserve the original intent, the draft's language (Chinese draft → Chinese output), and every concrete noun (library names, file names, etc.)
-- Make implicit goals, constraints, deliverables and acceptance criteria explicit; structured but not verbose
-- Output ONLY the polished prompt itself — no preamble, no explanation, no code fences
-- If the draft is already complete and clear, lightly refine it instead of padding"""
+_POLISH_SYSTEM = """你是一名提示词工程专家。用户在聊天输入框里写了一段草稿，按 Tab 请求润色。
+把草稿重写成一个高质量、可直接执行的任务提示词，硬性要求：
+- 输出语言必须与草稿语言完全一致：中文草稿→中文输出，英文草稿→英文输出
+- 保留用户的原始意图和所有具体名词（如库名、文件名）
+- 补全隐含的目标、约束、交付物与验收标准；结构化但不啰嗦
+- 只输出润色后的提示词本身，不要任何前言、解释或引号包裹
+- 草稿若已经完整清晰，做轻度打磨即可，不要注水"""
 _KEY_LINE = re.compile(r"^\s*(?:export\s+)?PROMPTS_API_KEY\s*=\s*(.+?)\s*$")
 
 
