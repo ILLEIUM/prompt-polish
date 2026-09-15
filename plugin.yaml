@@ -1,0 +1,10 @@
+name: prompt-polish
+version: 1.0.0
+description: Tab-key interactive prompt polishing — Hermes auxiliary model main path, prompts.chat improve/search as fallbacks.
+manifest_version: 1
+author: prompt-polish contributors
+license: MIT
+kind: standalone
+capabilities: []
+requires_env: []
+python_dependencies: []
